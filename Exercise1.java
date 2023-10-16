@@ -6,16 +6,21 @@ public class Exercise1 {
 
     public void Run() {
         System.out.println("Vilket år är du född?");        
-        int d = scanner.nextInt();
-        int d2 = LocalDate.now().getYear();
-        if(d > d2){
+        int yearBorn = Integer.parseInt(scanner.nextLine());
+
+        int yearCurrent = LocalDate.now().getYear();
+        
+        if(yearBorn > yearCurrent){
             System.out.println("Du är väl inte född i framtiden?");
         }
-        if(d == d2){
+
+        if(yearBorn == yearCurrent){
             System.out.println("Är du född detta år??");
         }
-        if(d < d2){
-            System.out.printf("Ok du är ca %d år\n", d2-d);
+
+        if(yearBorn < yearCurrent){
+            int age = yearCurrent-yearBorn;
+            System.out.printf("Ok du är ca %d år\n", age);
         }
     } 
 }
